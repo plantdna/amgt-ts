@@ -1,7 +1,7 @@
 #!/bin/bash
 function version()
 {
-    echo "Version 1.9.0, 2020.05.01"
+    echo "Version 1.9.1, 2020.05.25"
 }
 
 function usage()
