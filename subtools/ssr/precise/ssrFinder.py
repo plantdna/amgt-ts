@@ -110,9 +110,10 @@ def statReads(fltFas, locus, readsFile, refStatFile, outputFolder):
             sequence = readsFileReader.readline()
             repeats = findSsrInfo(sequence, motif)
             readId = line.rstrip('\n').lstrip('>')
-            ssrData.append({'readId':readId, 'repeats': repeats, 'sequence':sequence.rstrip('\n')})
+            if readId != locus: 
+            	ssrData.append({'readId':readId, 'repeats': repeats, 'sequence':sequence.rstrip('\n')})
             # end if
-
+        # end if
         line = readsFileReader.readline()
     # end while
     readsFileReader.close()
