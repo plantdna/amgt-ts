@@ -19,7 +19,9 @@ def safe_open_w(path):
 
 
 def outputFlank(site, direction, flank):
-    lLankFile = "ref/flank/%s/%s.lf.fas"%(direction, site)
+    appendixDict = {'left':'lf.fas', 'right':'rf.fas'}
+
+    lLankFile = "ref/flank/%s/%s.%s"%(direction, site, appendixDict[direction])
     if not os.path.exists(lLankFile): 
         with safe_open_w(lLankFile) as f:
             f.write(">" + site + "\n" + flank + "\n")
