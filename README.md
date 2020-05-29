@@ -10,13 +10,13 @@ Running METS requires a GNU-like environment. It should be possible to
 
 METS requires the following external tools:
 
-1. bamtools　　
-2. blast tool suite
-3. bwa　
-4. fastx_toolkit
-5. picard　
-6. samtools
-7. seqtk
+1. bamtools　(2.5.0)
+2. blast tool suite (2.6.0+)
+3. bwa　(0.7.17-r1188)
+4. fastx_toolkit (0.0.13)
+5. picard　(2.15.0-SNAPSHOT)
+6. samtools (1.3.1)
+7. seqtk (1.2)
 
   Seven tools maybe the seven demigods in the book "The Heroes of Olympus" by Rick Riordan
 
