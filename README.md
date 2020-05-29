@@ -1,5 +1,5 @@
 # METS
-METS(Multi-Satellite Extractor for Targeted Sequencing) is an accurate tool for large-scale Multi-Satellite extracting for targeted sequencing data.
+METS(Microsatellite Extractor for Targeted Sequencing) is an accurate tool for large-scale microsatellite extracting for targeted sequencing data.
 
 Copyright Holder: Wang Fengge, Huo Yongxue  
 email: admin@plantdna.cn
