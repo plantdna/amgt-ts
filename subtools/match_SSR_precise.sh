@@ -16,7 +16,7 @@ find -L $PROJECT_DIR/00_fastq -name "*.$FORMAT" -print | \
         echo "[`date`]: Start processing ${sample} ... "
 
         $FASTX_DIR/fastq_quality_filter -q $QUALITY_FILTER -p 80 -Q 33 \
-            -i PREFIX | $FASTX_DIR/fastx_clipper -l 100 -Q 33 -i - \
+            -i PREFIX  \
                     -o $PROJECT_DIR/00_fastq/clean/${sample}.clean.fq
         '
 

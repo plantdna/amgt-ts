@@ -4,10 +4,25 @@ mkdir -p $PROJECT_DIR/01_assembly
 mkdir -p $PROJECT_DIR/04_reads
 
 ############################################## Part1 Aseembly ###################################################
+
+mkdir -p $PROJECT_DIR/00_fastq/clean
+find -L $PROJECT_DIR/00_fastq -name "*.$FORMAT" -print | \
+    xargs -n 1 -P 4 -I PREFIX \
+    sh -c '
+        sample=`basename PREFIX | cut -f 1 -d "."`
+        lane_id=${sample}
+        echo "[`date`]: Start processing ${sample} ... "
+
+        $FASTX_DIR/fastq_quality_filter -q $QUALITY_FILTER -p 80 -Q 33 \
+            -i PREFIX  \
+                    -o $PROJECT_DIR/00_fastq/clean/${sample}.clean.fq
+        '
+
+
 ##
 ## bwa-mem mapping and GATK realignment
 ##
-find -L $PROJECT_DIR/00_fastq -name "*.$FORMAT" -print | \
+find -L $PROJECT_DIR/00_fastq/clean -name "*.clean.fq" -print | \
     xargs -n 1 -P 4 -I PREFIX \
     sh -c '
         sample=`basename PREFIX | cut -f 1 -d "."`
