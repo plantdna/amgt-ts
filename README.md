@@ -1,14 +1,14 @@
-# METS
-METS(Microsatellite Extractor for Targeted Sequencing) is an accurate tool for large-scale microsatellite extracting for targeted sequencing data.
+# AMGT-TS
+AMGT-TS(Accurate Microsatellite Genotyping Tool based on Targeted Sequencing) is an accurate tool for large-scale microsatellite genotyping tool for targeted sequencing data.
 
 Copyright Holder: Wang Fengge, Huo Yongxue  
 email: admin@plantdna.cn
 
 # Program Requirement
-Running METS requires a GNU-like environment. It should be possible to
-      run METS on a Linux or Mac OS, Ubuntu Server 18.04 is recommended.
+Running AMGT-TS requires a GNU-like environment. It should be possible to
+      run AMGT-TS on a Linux or Mac OS, Ubuntu Server 18.04 is recommended.
 
-METS requires the following external tools:
+AMGT-TS requires the following external tools:
 
 1. bamtools　(2.5.0)
 2. blast tool suite (2.6.0+)
@@ -24,11 +24,11 @@ METS requires the following external tools:
   Please config the tools in the profile first. An example is the file under subtools named profiles-maizedna-1.sh
 
 # Running
-	./METS.sh SCRIPT_DIR ENV_FILE METHOD
+	./amgt-ts.sh SCRIPT_DIR ENV_FILE METHOD
 
-  METS.sh takes 3 parmeters:
+  amgt-ts.sh takes 3 parmeters:
 
-1. SCRIPT_DIR: the folder which the METS.sh located            
+1. SCRIPT_DIR: the folder which the amgt-ts.sh located            
 2. ENV_FILE: the configuration file        
 3. METHOD:  to specify the algorithm: precise or broad
 
