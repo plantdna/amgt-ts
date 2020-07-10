@@ -24,5 +24,12 @@ export REF_FILE=$REF_DIR/sites.amplicon.fa
 export POS_FILE=$REF_DIR/sites.motif.info.stats
 
 # parameters
+export THREADS=50
 export CPU_CORES=2
-export QUALITY_FILTER=20
+export MIN_QUALITY_SCORE=20
+
+# references processing
+export FLANK_LENGTH=20
+
+# SSR typing
+export MIN_BASES_PERCENT=80

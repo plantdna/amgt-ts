@@ -11,4 +11,4 @@ $SAMTOOLS faidx $REF_FILE
 python $SCRIPT_DIR/subtools/ref/splitRef.py $SCRIPT_DIR/ref $REF_FILE
 
 ## 3 split flanking sequence (20bp)
-python $SCRIPT_DIR/subtools/ref/splitFlankSeq.py 20 $REF_FILE $POS_FILE
+python $SCRIPT_DIR/subtools/ref/splitFlankSeq.py $FLANK_LENGTH $REF_FILE $POS_FILE

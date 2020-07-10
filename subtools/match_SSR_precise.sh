@@ -15,7 +15,7 @@ find -L $PROJECT_DIR/00_fastq -name "*.$FORMAT" -print | \
         lane_id=${sample}
         echo "[`date`]: Start processing ${sample} ... "
 
-        $FASTX_DIR/fastq_quality_filter -q $QUALITY_FILTER -p 80 -Q 33 \
+        $FASTX_DIR/fastq_quality_filter -q $MIN_QUALITY_SCORE -p $MIN_BASES_PERCENT -Q 33 \
             -i PREFIX  \
                     -o $PROJECT_DIR/00_fastq/clean/${sample}.clean.fq
         '
@@ -102,7 +102,7 @@ do
 
         $BLAST_BIN/blastn -query $REF_DIR/flank/left/${site}.lf.fas \
             -db  $PROJECT_DIR/02_site/${sample}/${site}.bwa.sort.realn \
-            -task blastn -evalue 10 -num_threads 10 -max_target_seqs 10000 \
+            -task blastn -evalue 10 -num_threads $THREADS -max_target_seqs 10000 \
             -outfmt '7 qseqid qlen sseqid slen pident length mismatch gapopen qstart qend qcovs sstart send evalue bitscore' \
             -out $PROJECT_DIR/03_blast/${sample}/${site}.bwa.sort.fasta.lf.blastn
         awk '!a[$2 $3]++' $PROJECT_DIR/03_blast/${sample}/${site}.bwa.sort.fasta.lf.blastn \
@@ -110,7 +110,7 @@ do
 
         $BLAST_BIN/blastn -query $REF_DIR/flank/right/${site}.rf.fas \
             -db  $PROJECT_DIR/02_site/${sample}/${site}.bwa.sort.realn \
-            -task blastn -evalue 10 -num_threads 10 -max_target_seqs 10000 \
+            -task blastn -evalue 10 -num_threads $THREADS -max_target_seqs 10000 \
             -outfmt '7 qseqid qlen sseqid slen pident length mismatch gapopen qstart qend qcovs sstart send evalue bitscore' \
             -out $PROJECT_DIR/03_blast/${sample}/${site}.bwa.sort.fasta.rf.blastn
 

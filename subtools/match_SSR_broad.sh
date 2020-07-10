@@ -13,7 +13,7 @@ find -L $PROJECT_DIR/00_fastq -name "*.$FORMAT" -print | \
         lane_id=${sample}
         echo "[`date`]: Start processing ${sample} ... "
 
-        $FASTX_DIR/fastq_quality_filter -q $QUALITY_FILTER -p 80 -Q 33 \
+        $FASTX_DIR/fastq_quality_filter -q $MIN_QUALITY_SCORE -p $MIN_BASES_PERCENT -Q 33 \
             -i PREFIX  \
                     -o $PROJECT_DIR/00_fastq/clean/${sample}.clean.fq
         '
@@ -29,7 +29,7 @@ find -L $PROJECT_DIR/00_fastq/clean -name "*.clean.fq" -print | \
         lane_id=${sample}
         echo "[`date`]: Start processing ${sample} ... "
 
-        $BWA mem -t 6 -M -R "@RG\tID:${lane_id}\tLB:${sample}\tPL:IonTo\tPU:${sample}\tSM:${sample}" \
+        $BWA mem -t $THREADS -M -R "@RG\tID:${lane_id}\tLB:${sample}\tPL:IonTo\tPU:${sample}\tSM:${sample}" \
             $REF_FILE PREFIX \
             > $PROJECT_DIR/01_assembly/${sample}.bwa.sam \
             2> $PROJECT_DIR/01_assembly/${sample}.bwa.log
