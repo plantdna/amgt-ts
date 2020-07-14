@@ -4,7 +4,10 @@ AMGT-TS(Accurate Microsatellite Genotyping Tool based on Targeted Sequencing) is
 Copyright Holder: Wang Fengge, Huo Yongxue  
 email: admin@plantdna.cn
 
-# Program Requirement
+# Program Requirements
+
+For a quick start purpose instead of diving into the details, we recommend to visit the online version instead: https://amgt-ts.plantdna.site:8443/. It is a pre-installed version, and wrapped with web pages interface. Hope that will bring you a better experience.
+
 Running AMGT-TS requires a GNU-like environment. It should be possible to
       run AMGT-TS on a Linux or Mac OS, Ubuntu Server 18.04 is recommended.
 
