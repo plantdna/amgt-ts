@@ -8,4 +8,5 @@ SCRIPT_DIR=/mnt/diskc/gitlab/amgt-ts/
 ENV_FILE=$SCRIPT_DIR/subtools/profiles-maizedna-1.sh
 #METHOD=broad
 METHOD=precise
-./amgt-ts.sh --script=$SCRIPT_DIR --environment=$ENV_FILE --method=$METHOD 2>&1 | tee -a $LOG_FILE
+PROJECT_DIR=/mnt/diskc/gitlab/amgt-ts
+$SCRIPT_DIR/amgt-ts.sh --script=$SCRIPT_DIR --environment=$ENV_FILE --method=$METHOD --project=$PROJECT_DIR 2>&1 | tee -a $LOG_FILE

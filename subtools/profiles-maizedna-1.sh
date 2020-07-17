@@ -1,7 +1,6 @@
 # !/bin/bash
-export BASE_DIR=/mnt/diskc/gitlab/mets
-export REF_DIR=$BASE_DIR/ref
-export SCRIPT_DIR=$BASE_DIR
+export REF_DIR=$SCRIPT_PATH/ref
+export SCRIPT_DIR=$SCRIPT_PATH
 export PROJECT_DIR=$BASE_DIR/working
 export TMP_DIR=$BASE_DIR/tmp
 export TOOLS_DIR=/mnt/diskc/gitlab/s2s/tools
@@ -24,7 +23,7 @@ export REF_FILE=$REF_DIR/sites.amplicon.fa
 export POS_FILE=$REF_DIR/sites.motif.info.stats
 
 # parameters
-export THREADS=50
+export THREADS=2
 export CPU_CORES=2
 export MIN_QUALITY_SCORE=20
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 function version()
 {
-    echo "Version 1.9.1, 2020.05.25"
+    echo "Version 1.9.2, 2020.07.17"
 }
 
 function usage()
@@ -33,6 +33,9 @@ while [ "$1" != "" ]; do
         -m | --method)
             METHOD=$VALUE
             ;;
+        -p | --project)
+            export BASE_DIR=$VALUE
+            ;;
         -v | --version)
             version
             exit
@@ -54,6 +57,7 @@ mkdir -p $TMP_DIR
 
 ## Step2 index the references
 $SCRIPT_PATH/subtools/ref_index.sh
+echo $BASE_DIR
 
 ## Step3 SSR finding
 if [ $METHOD = "precise" ]; then
