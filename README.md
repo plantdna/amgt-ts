@@ -21,7 +21,7 @@ AMGT-TS requires the following external tools:
 6. samtools (1.3.1)
 7. seqtk (1.2)
 
-  Seven tools maybe the seven demigods in the book "The Heroes of Olympus" by Rick Riordan
+  Seven tools maybe the seven demigods in the book "The Heroes of Olympus" by Rick Riordan.
 
 # Configuration
   Please config the tools in the profile first. An example is the file under subtools named profiles-maizedna-1.sh
@@ -29,13 +29,14 @@ AMGT-TS requires the following external tools:
 # Running
 	./amgt-ts.sh SCRIPT_DIR ENV_FILE METHOD
 
-  amgt-ts.sh takes 3 parmeters:
+  Here amgt-ts.sh takes 3 parmeters:
 
 1. SCRIPT_DIR: the folder which the amgt-ts.sh located            
 2. ENV_FILE: the configuration file        
 3. METHOD:  to specify the algorithm: precise or broad
 
-	please check the launch.sh to find the usage details.
+   You can add -p or --project to specify a project name, for multi-project supporting purpose.
+   Please check the launch.sh to find the usage details.
 
 * Format of reference fasta file
 

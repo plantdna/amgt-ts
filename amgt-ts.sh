@@ -13,6 +13,7 @@ function usage()
     echo "-s | --script, specify the script folder."
     echo "-e | --environment, specifiy the environment configuration file."
     echo "-m | --method, specify the analysis method, either precise or broad."
+    echo "-p | --project, specify the project name, for multi-projects support."
     echo "-v | --version, show the current version."
 }
 
