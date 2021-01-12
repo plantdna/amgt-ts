@@ -17,13 +17,13 @@ def cigar_resolved(match_start, ssr_pos_left, ssr_pos_right, cigar, motif_length
         elif action == 'M':
             ruler += int(size)
         elif action =='I':
-            if ruler >= ssr_pos_left - motif_length and ruler <= ssr_pos_right + motif_length:
+            if ruler >= ssr_pos_left and ruler <= ssr_pos_right + int(size):
                 resolve_type = 'I'
                 type_length = int(size)
                 break
             # end if
         elif action =='D':
-            if ruler >= ssr_pos_left - motif_length and ruler <= ssr_pos_right + motif_length:
+            if ruler >= ssr_pos_left  and ruler <= ssr_pos_right:
                 resolve_type = 'D'
                 type_length = int(size) * -1
                 break
